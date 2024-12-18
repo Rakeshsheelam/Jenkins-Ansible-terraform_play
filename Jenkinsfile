@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     environment {
-        AWS_REGION = 'us-east-1'
-        AMAZON_KEY_PAIR = 'linux'
-        UBUNTU_KEY_PAIR = 'ubuntu-key'
+        AWS_REGION = 'ap-southeast-2'
+        AMAZON_KEY_PAIR = 'sydney'
+        UBUNTU_KEY_PAIR = 'sydney'
     }
 
     stages {
@@ -12,7 +12,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '', url: 'https://github.com/Hussain147/tf-ansible-task.git/']]]) 
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '', url: 'https://github.com/Rakeshsheelam/Jenkins-Ansible-terraform_play.git/']]]) 
             }
         }
         
